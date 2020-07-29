@@ -1,0 +1,187 @@
+body {
+	background-color: rgb(246, 246, 246);
+}
+
+#message {
+	background-color: rgb(240, 240, 240);
+	border: 1px solid rgb(30, 100, 130);
+	border-radius: 3px;
+	font-family: Trebuchet MS;
+	left: 0;
+	margin: auto;
+	padding: 20px;
+	position: fixed;
+	right: 0;
+	top: 10px;
+	width: 387px;
+	z-index: 1031;
+}
+
+#message p {
+	margin: 0;
+}
+
+#headerLogo {
+	background: no-repeat left url(../images/anac.png);
+	margin: 20px;
+	height: 88px;
+}
+
+#headerMenu {
+	background: repeat-x url(../images/headerMenuBackground.jpg);
+	min-width: 1100px;
+}
+
+#headerMenu ul {
+	font-family: Trebuchet MS;
+	font-size: 95%;
+	height: 35px;
+	line-height: 35px;
+	margin: 0;
+	padding: 0;
+}
+
+#headerMenu ul li {
+	display: block;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#headerMenu ul li.left {
+	background: no-repeat left url(../images/headerMenuBackgroundLeft.jpg);
+	padding: 0 0 0 100px;
+}
+
+#headerMenu ul li.right {
+	background: no-repeat right url(../images/headerMenuBackgroundRight.jpg);
+	float: right;
+	height: 35px;
+	margin: 0;
+	padding: 0 100px 0 0;
+}
+
+#headerMenu ul li a {
+	color: rgb(255, 255, 255);
+	padding: 0 20px 0 20px;
+	text-decoration: none;
+}
+
+#headerMenu ul li a:hover {
+	background: no-repeat center bottom url(../images/headerMenuHover.jpg);
+	background-color: rgb(30, 100, 130);
+	display: block;
+}
+
+#main {
+	padding: 10px;
+}
+
+#main .highlight-rect {
+	background-color: rgb(190, 210, 240);
+	display: block;
+	height: 10px;
+	margin: 20px auto 0 auto;
+	width: 250px;
+}
+
+#main fieldset {
+	border: 2px solid rgb(190, 210, 240);
+	padding: 10px;
+}
+
+#main label {
+	color: rgb(75, 75, 75);
+}
+
+#main .criteriaEspdField, .partyField {
+	margin-bottom: 10px;
+}
+
+#main .button {
+	background-color: rgb(0, 50, 100);
+	border: 0; 
+	border-radius: 3px; 
+	color: white;
+	margin-top: 10px;
+	outline: none;
+	padding: 10px; 
+}
+
+#main .button:hover {
+	background-color: rgb(30, 100, 130);
+	cursor: pointer; 
+}
+
+#main .overlay {
+	background-color: rgba(245, 245, 245, 0.5);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1030;
+}
+
+#main .popupContent {
+	background-color: rgb(240, 240, 240);
+	border: 1px solid rgb(30, 100, 130);
+	border-radius: 3px;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	padding: 30px;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+#main #criteriaContent {
+	height: 545px;
+	min-width: 1273px;
+}
+
+#main #criteriaChildrenPopupContent {
+	height: 545px;
+	min-width: 1135px;
+	width: 90%;
+}
+
+#main #criteriaHistoryPopupContent {
+	height: 545px;
+	min-width: 1135px;
+	width: 90%;
+}
+
+#main #criteriaEvidencesPopupContent {
+	height: 545px;
+	min-width: 1030px;
+	width: 90%;
+}
+
+#main #synchronizesContent {
+	height: 545px;
+	min-width: 1253px;
+}
+
+#main #criteriaTaxonomyContent {
+	height: 545px;
+	min-width: 1228px;
+}
+
+#main #partyPopupContent {
+	height: 615px;
+	min-width: 1135px;
+	width: 90%;
+}
+
+#footer {
+	background: no-repeat left top url(../images/tricolore3.jpg);
+	border-top: 1px solid rgb(215, 215, 215);
+}
+
+#footer p {
+	color: rgb(150, 150, 150);
+	font-size: 70%;
+	margin: 0;
+	text-align: center;
+}

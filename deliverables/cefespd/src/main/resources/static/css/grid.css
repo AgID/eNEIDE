@@ -1,0 +1,161 @@
+table.grid {
+	border: 2px solid rgb(0, 50, 100);
+	border-collapse: inherit;
+	border-spacing: 0;
+	font-family: Trebuchet MS;
+}
+
+table.grid thead tr th {
+	background-color: rgb(0, 50, 100);
+	background-position: right;
+	background-repeat: no-repeat;
+	border: 1px solid rgb(0, 50, 100);
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	font-weight: normal;
+	height: 21px;
+	line-height: 0;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+table.grid thead tr th.sort:hover {
+	cursor: pointer;
+}
+
+table.grid thead tr th.sortAsc {
+	background-image: url("../images/grid/sortAsc.png");
+}
+
+table.grid thead tr th.sortDesc {
+	background-image: url("../images/grid/sortDesc.png");
+}
+
+table.grid thead tr td {
+	background-color: rgb(245, 245, 245);
+	height: 23px;
+	line-height: 0;
+}
+
+::-ms-clear {
+	display: none;
+}
+
+table.grid thead tr td input {
+	border: 1px solid rgb(0, 50, 100);
+	font-size: 13px;
+	height: 21px;
+	margin-left: 1px;
+}
+
+table.grid thead tr td select {
+	border: 1px solid rgb(0, 50, 100);
+	font-size: 13px;
+	height: 21px;
+	margin-left: 1px;
+}
+
+table.grid tbody tr td {
+	border-bottom: 1px solid rgb(200, 200, 200);
+	border-right: 1px solid rgb(200, 200, 200);
+	color: rgb(75, 75, 75);
+	font-size: 13px;
+	height: 29px;
+	line-height: 0;
+	padding: 0 2px 0 2px;
+}
+
+table.grid tbody tr:first-child td {
+	border-top: 1px solid rgb(200, 200, 200);
+	height: 30px;
+}
+
+table.grid tbody tr td:first-child {
+	border-left: 1px solid rgb(200, 200, 200);
+}
+
+table.grid tbody tr:nth-child(odd) td {
+	background-color: rgb(255, 255, 255);
+}
+
+table.grid tbody tr:nth-child(even) td {
+	background-color: rgb(200, 220, 240);
+}
+
+table.grid tbody tr:hover td.hover {
+	background-color: rgb(150, 150, 150);
+	color: rgb(255, 255, 255);
+}
+
+table.grid tbody tr td input {
+	background-color: transparent;
+	border: none;
+	color: rgb(75, 75, 75);
+	height: 100%;
+}
+
+table.grid tbody tr td img {
+	vertical-align: middle;
+}
+
+table.grid tfoot tr td {
+	background-color: rgb(0, 50, 100);
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	height: 26px;
+	padding-top: 4px;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+table.grid tfoot tr td div button {
+	background-color: transparent;
+	border: none;
+	height: 16px;
+	margin-right: 2px;
+	outline: none;
+	vertical-align: middle;
+	width: 16px;
+}
+
+table.grid tfoot tr td div button.first {
+	cursor: pointer;
+	background-image: url("../images/grid/first.gif");
+}
+
+table.grid tfoot tr td div button.firstDisabled {
+	background-image: url("../images/grid/firstDisabled.gif");
+}
+
+table.grid tfoot tr td div button.previous {
+	cursor: pointer;
+	background-image: url("../images/grid/previous.gif");
+}
+
+table.grid tfoot tr td div button.previousDisabled {
+	background-image: url("../images/grid/previousDisabled.gif");
+}
+
+table.grid tfoot tr td div button.next {
+	cursor: pointer;
+	background-image: url("../images/grid/next.gif");
+}
+
+table.grid tfoot tr td div button.nextDisabled {
+	background-image: url("../images/grid/nextDisabled.gif");
+}
+
+table.grid tfoot tr td div button.last {
+	cursor: pointer;
+	background-image: url("../images/grid/last.gif");
+}
+
+table.grid tfoot tr td div button.lastDisabled {
+	background-image: url("../images/grid/lastDisabled.gif");
+}
+
+table.grid tfoot tr td div button.first:active, button.previous:active, button.next:active, button.last:active {
+	border: 1px solid transparent;
+}

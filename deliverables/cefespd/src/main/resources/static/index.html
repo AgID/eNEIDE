@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>CEF European single procurement document</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/grid.css" rel="stylesheet">
+		<link href="css/cefespd.css" rel="stylesheet">
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/grid.js"></script>
+		<script src="js/cefespd.js"></script>
+	</head>
+
+	<body>
+		<div id="message" style="display: none;"></div>
+
+		<div id="header">
+			<div id="headerLogo"></div>
+
+			<div id="headerMenu">
+				<ul>
+					<li class="left"><a href="javascript: show('criteriaContent', 'criteria');">Criteri</a></li>
+					<li><a href="javascript: show('evidencesContent', 'evidences');">Evidenze</a></li>
+					<li><a href="javascript: show('synchronizesContent', 'synchronizes');">Sincronizzazioni</a></li>
+					<li><a href="javascript: show('criteriaTaxonomyContent', 'criteriaTaxonomy');">Tassonomia</a></li>
+					<li><a href="javascript: criteriaEspd = []; $('.criteriaEspdField').val(''); $('.partyField').val(''); $('#createEspd').hide(); show('criteriaEspdContent', 'criteriaEspd');">ESPD</a></li>
+					<li class="right"></li>
+				</ul>
+			</div>
+
+			<div id="headerBottom"></div>
+		</div>
+
+		<div id="main">
+			<!-- criteria -->
+			<div class="content" id="criteriaContent">
+				<div class="text-center">
+					<h2>Criteri</h2>
+					<span class="highlight-rect"></span>
+				</div>
+
+				<fieldset>
+					<div id="criteria"></div>
+				</fieldset>
+			</div>
+			<!-- criteria -->
+
+			<!-- criteriaChildren -->
+			<div class="overlay" id="criteriaChildrenPopup" style="display: none;">
+				<div class="popupContent" id="criteriaChildrenPopupContent">
+					<div class="text-center">
+						<h2>Criteri Figli<span id="criteriaChildrenLabel"></span></h2>
+						<span class="highlight-rect"></span>
+					</div>
+
+					<fieldset>
+						<div id="criteriaChildren"></div>
+
+						<div style="float: right;">
+							<button class="button" onclick="criteriaChildrenClose();">Chiudi</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<!-- criteriaChildren -->
+
+			<!-- criteriaHistory -->
+			<div class="overlay" id="criteriaHistoryPopup" style="display: none;">
+				<div class="popupContent" id="criteriaHistoryPopupContent">
+					<div class="text-center">
+						<h2>History Criterio<span id="criteriaHistoryLabel"></span></h2>
+						<span class="highlight-rect"></span>
+					</div>
+
+					<fieldset>
+						<div id="criteriaHistory"></div>
+
+						<div style="float: right;">
+							<button class="button" onclick="criteriaHistoryClose();">Chiudi</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<!-- criteriaHistory -->
+
+			<!-- criteriaEvidences -->
+			<div class="overlay" id="criteriaEvidencesPopup" style="display: none;">
+				<div class="popupContent" id="criteriaEvidencesPopupContent">
+					<div class="text-center">
+						<h2>Evidenze Criterio<span id="criteriaEvidencesLabel"></span></h2>
+						<span class="highlight-rect"></span>
+					</div>
+
+					<fieldset>
+						<div id="criteriaEvidences"></div>
+
+						<div style="float: right;">
+							<button class="button" onclick="criteriaEvidencesClose();">Chiudi</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<!-- criteriaEvidences -->
+
+			<!-- evidences -->
+			<div class="content" id="evidencesContent" style="display: none;">
+				<div class="text-center">
+					<h2>Evidenze</h2>
+					<span class="highlight-rect"></span>
+				</div>
+
+				<fieldset>
+					<div id="evidences"></div>
+				</fieldset>
+			</div>
+			<!-- evidences -->
+
+			<!-- synchronizes -->
+			<div class="content" id="synchronizesContent" style="display: none;">
+				<div class="text-center">
+					<h2>Sincronizzazioni</h2>
+					<span class="highlight-rect"></span>
+				</div>
+
+				<fieldset>
+					<div id="synchronizes"></div>
+				</fieldset>
+			</div>
+			<!-- synchronizes -->
+
+			<!-- criteriaTaxonomy -->
+			<div class="content" id="criteriaTaxonomyContent" style="display: none;">
+				<div class="text-center">
+					<h2>Tassonomia</h2>
+					<span class="highlight-rect"></span>
+				</div>
+
+				<fieldset>
+					<div id="criteriaTaxonomy"></div>
+				</fieldset>
+			</div>
+			<!-- criteriaTaxonomy -->
+
+			<!-- criteriaEspd -->
+			<div class="content" id="criteriaEspdContent" style="display: none;">
+				<div class="text-center">
+					<h2>ESPD</h2>
+					<span class="highlight-rect"></span>
+				</div>
+
+
+				<fieldset>
+					<label for="codiceIdentificativoGara">CIG</label>
+					<input class="col-3 criteriaEspdField form-control" id="codiceIdentificativoGara" name="codiceIdentificativoGara" type="text" value=""/>
+
+					<div id="criteriaEspd"></div>
+
+					<div style="float: left;">
+						<button class="button" onclick="partyShow();">Stazione appaltante</button>
+					</div>
+
+					<div style="float: right;">
+						<button class="button" id="createEspd" onclick="createEspd();" style="display: none;">Crea ESPD</button>
+					</div>
+				</fieldset>
+			</div>
+			<!-- criteriaEspd -->
+
+			<!-- party -->
+			<div class="overlay" id="partyPopup" style="display: none;">
+				<div class="popupContent" id="partyPopupContent">
+					<div class="text-center">
+						<h2>Stazione appaltante</h2>
+						<span class="highlight-rect"></span>
+					</div>
+
+					<fieldset>
+						<div class="form-group">
+							<label for="partyIdentification">Codice fiscale</label>
+							<input class="col-3 partyField form-control" id="partyIdentification" name="partyIdentification" type="text" value=""/>
+
+							<label for="partyName">Denominazione</label>
+							<input class="partyField form-control" id="partyName" name="partyName" type="text" value=""/>
+
+							<label for="street">Via</label>
+							<input class="partyField form-control" id="street" name="street" type="text" value=""/>
+
+							<label for="city">Città</label>
+							<input class="partyField form-control" id="city" name="city" type="text" value=""/>
+
+							<label for="postalZone">CAP</label>
+							<input class="col-3 partyField form-control" id="postalZone" name="postalZone" type="text" value=""/>
+						</div>
+
+						<div style="float: right;">
+							<button class="button" onclick="partyClose();">Chiudi</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<!-- party -->
+		</div>
+
+		<div id="footer" title="Versione 2.1.1 - 13/07/2020">
+			<p>&copy; Autorit&agrave; Nazionale Anticorruzione - Tutti i diritti riservati</p>
+			<p>via M. Minghetti, 10 - 00187 Roma - c.f. 97584460584</p>
+			<p>Contact Center: 800896936</p>
+		</div>
+	</body>
+</html>
